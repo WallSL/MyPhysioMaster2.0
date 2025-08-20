@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="guideline">
+  <h1>{{ page.title }}</h1>
+  <p><strong>Órgão:</strong> {{ page.organization }} · <strong>Ano:</strong> {{ page.year }} · <strong>Atualizado:</strong> {{ page.updated | default: page.date | date: "%Y-%m-%d" }}</p>
+  {% if page.tags %}<p><strong>Tags:</strong> {{ page.tags | join: ', ' }}</p>{% endif %}
+  <h2>🔎 PICO</h2>{{ page.pico | markdownify }}
+  <h2>📌 Recomendações</h2>
+  <ul>{% for rec in page.recommendations %}<li>{{ rec.text }} — <em>{{ rec.strength }}</em></li>{% endfor %}</ul>
+  {% if page.care_pathway %}<h2>🧭 Linha de cuidado</h2>{{ page.care_pathway | markdownify }}{% endif %}
+  {% if page.outcomes %}<h2>🎯 Desfechos/MCID</h2>{{ page.outcomes | markdownify }}{% endif %}
+  <h2>🇧🇷 Aplicação no Brasil</h2>{{ page.br_context | markdownify }}
+  {% if page.pitfalls %}<h2>⚠️ Armadilhas</h2>{{ page.pitfalls | markdownify }}{% endif %}
+  <h2>📖 Referências</h2>
+  <ul>{% for ref in page.references %}<li><a href="{{ ref.url }}">{{ ref.title }}</a></li>{% endfor %}</ul>
+  <p><a href="{{ '/' | relative_url }}">⬅ Voltar</a></p>
+</article>

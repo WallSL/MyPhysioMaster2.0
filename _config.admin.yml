@@ -1,0 +1,3 @@
+# Habilita interface de administração local
+plugins:
+  - jekyll-admin
