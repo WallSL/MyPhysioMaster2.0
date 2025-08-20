@@ -1,0 +1,16 @@
+title: MyPhysioMaster
+description: Resumos práticos de guidelines para fisioterapeutas
+theme: minima
+permalink: pretty
+collections:
+  guidelines:
+    output: true
+    permalink: /guidelines/:name/
+defaults:
+  - scope: { path: "", type: "guidelines" }
+    values: { layout: guideline, toc: true }
+markdown: kramdown
+kramdown: { input: GFM }
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
